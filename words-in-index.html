@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>Octopus coding challenge - word index</title>
+  </head>
+  <body>
+    <h2>Word Index</h2>
+
+    {% if words|length == 0 %}
+      <div>
+        <p>
+      <b>No words in index!</b>
+        </p>
+      </div>
+      <div>
+        <p>
+      Please grab a page and return here
+        </p>
+      </div>
+      {% include 'url-form.html' %}
+    {% else %}
+
+    <div>
+      <p>
+    You can <a href="/clear">erase the word counts and start fresh.</a>
+      </p>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Word</th>
+          <th>Count</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for word in words %}
+        <tr class="row">
+          <td class="word">{{ word[0] }}</td>
+          <td class="count">{{ word[1] }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+
+    {% endif %}
+  </body>
+</html>
+

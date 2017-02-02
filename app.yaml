@@ -1,0 +1,44 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /.*
+  script: main.app
+
+libraries:
+- name: MySQLdb
+  version: "latest"
+- name: jinja2
+  version: "latest"
+
+# [START env_variables]
+env_variables:
+    CLOUDSQL_CONNECTION_NAME: startup-157508:europe-west1:startup-db
+    CLOUDSQL_DBNAME: octopus
+    CLOUDSQL_USER: dbuser
+    CLOUDSQL_PASSWORD: dbuser
+    OCTOPUS_PUBLIC_KEY: |
+        -----BEGIN RSA PUBLIC KEY-----
+        MIGJAoGBAIHYcNuvEIrLvLykmiO0zdASzqNYKKd5Ju8IzbKlalcutcJDLAJCZu6W
+        4UYZwlxtF5S6GuQbfsJ0uE1iO9LdWFTOk5s5SIiSls7u34fzo3J3KTxKfnrazi/8
+        //+KX9P77hn5S7wBJpnffxxOvUiqvDNHA4QCHUyHT5F3EaZGirVXAgMBAAE=
+        -----END RSA PUBLIC KEY-----
+    OCTOPUS_PRIVATE_KEY: |
+        -----BEGIN RSA PRIVATE KEY-----
+        MIICYAIBAAKBgQCB2HDbrxCKy7y8pJojtM3QEs6jWCineSbvCM2ypWpXLrXCQywC
+        QmbuluFGGcJcbReUuhrkG37CdLhNYjvS3VhUzpObOUiIkpbO7t+H86Nydyk8Sn56
+        2s4v/P//il/T++4Z+Uu8ASaZ338cTr1IqrwzRwOEAh1Mh0+RdxGmRoq1VwIDAQAB
+        AoGAPTV4zjaSh7tPN2You1hKBSI4gsvWLkxwTBJMVUChBoQgbnkXz+DZgPNjMpaG
+        BufuS9AHSSyk7qnzD5eUxlwZDsD/EE/C9AQBahWffJkpa+L+orONa79bO9QMLQJg
+        SAIfMZN1qfUJrJ2x4vJ9Y+QGFsMkHbmstiibVvn5JKPyMsECRQDw52Sayx1IRJmY
+        h8E6NGpUkCMRgoQO0gciKPnh5MeTpeUDqVGBpPOWhcGjjfQXoZRFH9xSuusjUPCt
+        gKBKZwe6KoQkxwI9AIn7b7v1bAn00iypLSuzl7iy5NlM24wfNKG0+Wgtgys0sKVV
+        c5zP5878vGTqwzFHiUvpeg1U6BjqZLk68QJFALalOUmDJbhdCnbytjWC9/sVLQFh
+        iu4RnwbvOkViR05SQMf936YDggtlbeKrBZ3FC7084rZ2sUAdZdyl4OGIK/uhsH6R
+        Ajwx48eynjpCH1Me8sxyUK07CvPT3gZD08Sj81t6X3pd1N9J6Gu09zdJj/hORNPu
+        rX7nA7QtvdVtrNJeZwECRE5RtvDqOqhbjbiA6gllXz3Om9Tc4mWbpsBh4RgwrYSK
+        XKZ2L+7ICX7WeC3bc4cu7qAhpRS3IXifNKmKNJoc4LVaac/M
+        -----END RSA PRIVATE KEY-----
+# [END env_variables]
+

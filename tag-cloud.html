@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>Octopus coding challenge</title>
+  </head>
+  <body>
+  <h3> The Most Frequent words grabbed from <a href="{{ url }}">{{ url }}</a></h3>
+    ... or grab another page:
+    {% include 'url-form.html' %}
+  {% for tag in tags %}
+  <span title='{{ tag[1] }}' style='font-size:{{ tag[2] }}%;'>
+    {{ tag[0] }}
+  </span>
+  {% endfor %}
+  </body>
+</html>
